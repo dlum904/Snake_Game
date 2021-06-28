@@ -1,33 +1,40 @@
-let solid = new Snake();
 let scl = 20;
+let pliskin;
+let egg;
 
+// p4 setup function, setus up the initial canvas
 function setup() {
     createCanvas(600, 600);
-    frameRate(10);
+    pliskin = new Snake();
+    egg = new Food();
+    frameRate(10);      // p5 function to control framerate
 }
 
+// p4 draw function, will continuosly draw.
 function draw() {
     background(51);
-    solid.update();
-    solid.show()
+    pliskin.update();
+    pliskin.show();
+    egg.show();
 }
 
+// p4 keyPressed function, for listening for keypcodes
 function keyPressed() {
     if (keyCode === UP_ARROW) {
         console.log("UP")
-        solid.delta.x = 0;
-        solid.delta.y = -1;
+        pliskin.delta.x = 0;
+        pliskin.delta.y = -1;
     } else if (keyCode === DOWN_ARROW) {
         console.log("DOWN")
-        solid.delta.x = 0;
-        solid.delta.y = 1;
+        pliskin.delta.x = 0;
+        pliskin.delta.y = 1;
     } else if (keyCode === LEFT_ARROW) {
         console.log("LEFT")
-        solid.delta.x = -1;
-        solid.delta.y = 0;
+        pliskin.delta.x = -1;
+        pliskin.delta.y = 0;
     } else if (keyCode === RIGHT_ARROW) {
         console.log("RIGHT")
-        solid.delta.x = 1;
-        solid.delta.y = 0;
+        pliskin.delta.x = 1;
+        pliskin.delta.y = 0;
     }
 }
