@@ -7,7 +7,7 @@ function setup() {
     createCanvas(600, 600);
     pliskin = new Snake();
     egg = new Food();
-    frameRate(10);      // p5 function to control framerate
+    frameRate(5);      // p5 function to control framerate
 }
 
 // p4 draw function, will continuosly draw.
@@ -16,6 +16,7 @@ function draw() {
     pliskin.update();
     pliskin.show();
     egg.show();
+    if (pliskin.eat(egg)) egg.spawn();
 }
 
 // p4 keyPressed function, for listening for keypcodes

@@ -27,7 +27,8 @@ function Snake() {
     }
 
     // TODO: tells us if the snake is at the same pos as the food
-    this.eaten = function () {
-
+    this.eat = function (food) {
+        if (this.pos.x === food.pos.x && this.pos.y === food.pos.y) return true;
+        return false
     }
 }
