@@ -1,5 +1,5 @@
 function Snake() {
-    // the Snake's position on the canvas
+    // the Snake's head position on the canvas
     this.pos = {
         x: 0,
         y: 0
@@ -26,9 +26,15 @@ function Snake() {
         rect(this.pos.x, this.pos.y, scl, scl);
     }
 
-    // TODO: tells us if the snake is at the same pos as the food
+    // tells us if the snake is at the same pos as the food
     this.eat = function (food) {
         if (this.pos.x === food.pos.x && this.pos.y === food.pos.y) return true;
         return false
+    }
+
+    // snake grows.  increases the length of the snake.
+    this.grow = function () {
+        // the pos of the food becomes the head.  will get added to front of queue
+
     }
 }
